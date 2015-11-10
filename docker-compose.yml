@@ -1,0 +1,9 @@
+postfix:
+  restart: always
+  container_name: postfix
+  build: .
+  environment:
+    - DOMAINS=domain1.com domain2.com
+  ports:
+    - "25:25"
+  log_driver: "fluentd"
